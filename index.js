@@ -17,6 +17,6 @@ function calculate(){
     display.value = eval(display.value);
     }
     catch{
-        display.value = "Wrong Format";
+        display.value = "Too smart Genius";
     }
 }
