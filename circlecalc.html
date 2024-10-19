@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>circumference caluclator</title>
+    <style>
+        body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    /* font-size: 1em; */
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+p{
+    font-style: italic;
+}
+input{
+    height: 30px;
+    width: 300px;
+    border:#000
+}
+button{
+    height: 35px;
+    width: 150px;
+    border-radius: 100px;
+    background-color: #fff;
+    border: rgba(#000,0,0,0.6);
+    padding: 0;
+    margin: 0;
+}
+button:hover{
+    background-color: rgba(#000,0,0,0.6);
+}
+marquee{
+    color: red;
+    font-style: bold;
+}
+marquee{
+    animation:infinite;
+    animation-duration: 200ms;
+}
+@media (max-width:80vw) {
+    body{
+        width: 80vw;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <marquee direction="left">PLS RUN THIS ON YOUR COMPUTER NOT SCALED DYNAMICALLY(not for phones/tablets yet) :(</marquee>
+    <h1 id="myH1">Welcome</h1>
+    <label>Username:</label>
+    <input id="myIp"><br><br>
+    <button id="mySubmit">submit</button>
+
+    <p>In this website we can caluclate the circumference and area of the circle.</p>
+    <label>Enter Value:</label>
+    <input id="Ip">
+    <button id="calc">Caluclate</button>
+    <br>
+    <br>
+    <label>Output:</label>
+    <input type="text" id="Op" readonly>
+    <br>
+    <br>
+    <a href="page1.html">
+        <button>Click me</button>
+    </a>    
+    <script>
+        let user = window.prompt("Having a good day?");
+
+document.getElementById("mySubmit").onclick = function(){
+    user = document.getElementById("myIp").value;
+    document.getElementById("myH1").textContent = `Greetings ${user},`
+}
+//Noob i am.
+const pi = 22/7;
+let radius;
+let circumference;
+
+document.getElementById('calc').onclick = function() {
+    radius = document.getElementById('Ip').value;
+    radius = Number(radius);
+
+    if (!isNaN(radius) && radius > 0) {
+        circumference = 2 * pi * radius;
+        document.getElementById('Op').value = `Answer: ${circumference.toFixed(3)}`;
+    } else {
+        document.getElementById('Op').value = 'Invalid input. Please enter a valid radius.';
+    }
+};
+    </script>
+</body>
+</html>
